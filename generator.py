@@ -65,6 +65,8 @@ class Generator:
             for v in vertices:
                 parent = random.randint(1, v)
                 G_dp.add_edge(parent, v)
+                while parent == v:
+                    parent = random.randint(1, v)
                 if parent <= N_BNB and v <= N_BNB:
                     G_bnb.add_edge(parent, v)
 
